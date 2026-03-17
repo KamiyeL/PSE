@@ -19,8 +19,8 @@ Ziel der zweiten Iteration ist es, einen Odoo-Kalender auf dem TRMNL-Display dar
 ## 4. Datenmigration
 Der Kunde hat uns Zugriff auf sein GitHub-Repository gewährt (https://github.com/Abilium-GmbH/pse_trmnl_odoo_connector) und wünscht, dass wir künftig darin arbeiten. Timur übernimmt die Datenmigration und sendet dem Team die Einladungen zum neuen Repository.
 
-## 4. Lizenz
+## 5. Lizenz
 Für unser Projekt werden wir nach Absprache die MIT-Lizenz verwenden.
 
-## 5. Nächster Termin
+## 6. Nächster Termin
 Wir haben noch keinen Termin vereinbart. Timur wird sich mit Terminvorschlägen bei der Abilium melden.
