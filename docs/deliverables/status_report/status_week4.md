@@ -9,4 +9,4 @@ Das Projekt befindet sich soweit im Zeitplan. Die vorgesehenen Tasks sind wie ge
 
 ### Fortschritt:
 - Odoo-Modul implementiert für die Verbindung mit dem TRNML
-- Nächster Schritt ist die Implementierung eines Odoo-Moduls zum Anzeigen des Odoo Kalenders.
+- Nächster Schritt ist die Erweiterung des bestehenden Moduls zur Anzeige von Kalenderdaten aus Odoo.

@@ -1,9 +1,9 @@
 # Risikoanalysis Week 4
-1. Implementierung eines Odoo-Moduls für Darstellung des Kalenders zu komplex.
+1. Erweiterung des bestehenden TRMNL-Moduls zur Darstellung von Kalenderdaten ist komplex.
 * Eintrittswahrscheinlichkeit: mittel
-* Gewichtung: Die Implementierung des Odoo-Moduls ist das zentrale Ziel der nächsten Iteration. Würde dies scheitern könnten wir dies nicht erreichen. 
-* Gegenmassnahme: Sollten hier Probleme auftreten, werden wir zusätzliche Dokumentation anschauen oder gegebenfalls Pair-Coding anwenden.
-2. Beim Transferieren des Codes ins neue Repository treten Fehler auf. 
+* Gewichtung: Die Erweiterung unseres bestehnden TRMNL-Moduls um die Darstellung von Kalenderdaten ist ein zentrales Ziel der nächsten Iteration. Sollte die Implementierung scheitern, könnte dieses Ziel nicht erreicht werden.
+* Gegenmassnahme: Falls Probleme auftreten, werden wir zusätzliche Dokumentation konsultieren und gegebenfalls Pair Programming einsetzen, um die Implementierung gemeinsam zu lösen.
+2. Beim Transfer des Codes ins neue Repository können Fehler auftreten. 
 * Eintrittswahrscheinlichkeit: klein
-* Gewichtung: Im letzten Kundenmeeting wurde abgesprochen, dass wir die Implementation von nun an im Repository von Abilium bearbeiten.
-* Gegenmassnahme: Sollte bei der Übertragung etwas schieflaufen, werden wir uns informieren wie man ein Repository in ein neues Repository übertragen kann.
+* Gewichtung: Im letzten Kundenmeeting wurde vereinbart, dass die weitere Entwicklung im Repository von Abilium stattfinden soll.
+* Gegenmassnahme: Falls beim Transfer Probleme auftreten, werden wir geeignete Methoden zur Mogration eines Git-Repositories recherchieren und anwenden.
