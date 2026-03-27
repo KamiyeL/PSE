@@ -1,6 +1,6 @@
 # Meeting Protokoll - 27.03.2026
 
-**Datum:** 27.03.2026 
+**Datum:** 27.03.2026  
 **Uhrzeit:** 12:00 - 13:00  
 **Ort/Medium:** ExWi, Gruppenraum 01  
 
