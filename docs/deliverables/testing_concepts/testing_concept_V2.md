@@ -8,7 +8,7 @@
 
 ## 1. Ziel des Testkonzepts
 
-Ziel dieses Testkonzepts ist die Überprüfung, dass das Odoo-Modul zur Anbindung von TRMNL-Displays funktional korrekt arbeitet und die Kalenderdaten auf dem Display korrekt dargestellt werden.
+Ziel dieses Testkonzepts ist die Überprüfung, dass das Odoo-Modul zur Anbindung von TRMNL-Displays funktional korrekt arbeitet und die Daten aus den Odoo-Modulen auf dem Display korrekt dargestellt werden.
 
 Im Vergleich zur ersten Version des Testkonzepts wird der Testfokus in V2 stärker auf die tatsächlich relevante Kernfunktionalität gelegt:
 
@@ -28,27 +28,14 @@ Dazu werden drei Testarten eingesetzt:
 
 Getestet werden die zentralen Funktionen der Lösung:
 
-- Auslesen relevanter Kalenderdaten in Odoo
+- Auslesen relevanter Daten in Odoo
 - Verarbeitung und Formatierung der Daten für die Anzeige
 - visuelle Darstellung der Daten auf dem TRMNL-Display
 - Verhalten bei Fehlerfälle
 
 ---
 
-## 3. Testziele
-
-Mit dem Testkonzept V2 sollen insbesondere folgende Fragen beantwortet werden:
-
-- Werden Kalenderdaten korrekt aus Odoo übernommen?
-- Werden Datum, Uhrzeit, Titel und weitere Informationen korrekt formatiert?
-- Werden die Daten auf dem TRMNL-Display korrekt dargestellt?
-- Bleibt die Darstellung auch nach Änderungen am Code konsistent?
-- Funktionieren zentrale Klassen und Methoden isoliert korrekt?
-- Reagiert das System bei fehlerhaften oder unvollständigen Eingaben stabil?
-
----
-
-## 4. Testumgebung
+## 3. Testumgebung
 
 Die Tests werden in der bestehenden Entwicklungsumgebung durchgeführt.
 
@@ -59,7 +46,6 @@ Die Tests werden in der bestehenden Entwicklungsumgebung durchgeführt.
 - PostgreSQL
 - lokales Entwicklungssetup der Teammitglieder
 - TRMNL-Display bzw. TRMNL-Testumgebung
-- HTTP-Testtools wie `curl` oder Postman
 - Odoo-Testframework und Python `unittest`
 
 ### Testdaten
@@ -137,8 +123,6 @@ Nach einer Änderung am Code wird die neue Ausgabe erzeugt und mit dem Referenzb
 - Standardfall mit einem Kalendereintrag
 - mehrere Einträge
 - langer Titel
-- fehlende optionale Informationen
-- Sonderfall mit leerem Kalender bzw. keiner anzuzeigenden Information
 
 ### 5.3 Unit Tests
 
@@ -151,15 +135,12 @@ Prüfung einzelner Klassen und Methoden unabhängig vom Gesamtsystem.
 - Formatter-Klassen
 - Daten-Mapping zwischen Odoo-Daten und Anzeigeformat
 - Validierungslogik
-- Hilfsfunktionen zur Auswahl des nächsten Kalendereintrags
 
 #### Beispiele für Unit-Test-Inhalte
 
 - Pflichtfelder werden korrekt geprüft
 - Datum/Uhrzeit wird korrekt formatiert
-- leere Eingaben werden korrekt behandelt
 - ungültige Daten führen zu kontrolliertem Verhalten
-- erwartete JSON-Struktur wird korrekt aufgebaut
 
 #### Ziel der Auswahl
 
@@ -197,17 +178,9 @@ Ein Testdatensatz enthält unvollständige Informationen.
 Für einen einfachen Kalendereintrag wird ein Referenzbild hinterlegt.  
 **Erwartet:** Die generierte Ausgabe stimmt mit dem Golden Image überein.
 
-**TC-G02: Langer Titel**  
-Ein Eintrag mit langem Titel wird dargestellt.  
-**Erwartet:** Zeilenumbrüche und Layout entsprechen dem Referenzbild.
-
-**TC-G03: Mehrere Einträge**  
+**TC-G02: Mehrere Einträge**  
 Mehrere Einträge werden angezeigt.  
 **Erwartet:** Reihenfolge, Abstände und Formatierung stimmen mit dem Referenzbild überein.
-
-**TC-G04: Leere Anzeige / kein relevanter Eintrag**  
-Es liegen keine anzuzeigenden Daten vor.  
-**Erwartet:** Die leere oder alternative Anzeige entspricht dem Referenzbild.
 
 ### 6.3 Unit-Testfälle
 
@@ -218,12 +191,4 @@ Eine Methode zur Ausgabe eines Datums wird getestet.
 **TC-U02: Ermittlung des nächsten Kalendereintrags**  
 Mehrere Einträge werden an die Logik übergeben.  
 **Erwartet:** Der zeitlich nächste relevante Eintrag wird korrekt gewählt.
-
-**TC-U03: JSON-Struktur der Ausgabe**  
-Die Datenaufbereitung für den Endpoint wird getestet.  
-**Erwartet:** Die Struktur der erzeugten Daten entspricht dem erwarteten Format.
-
-**TC-U04: Behandlung leerer Eingaben**  
-Eine Methode erhält leere oder ungültige Eingaben.  
-**Erwartet:** Es erfolgt eine kontrollierte Behandlung ohne Absturz.
 
