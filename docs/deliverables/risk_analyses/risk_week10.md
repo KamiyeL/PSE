@@ -1,4 +1,4 @@
-# Risikoanalysis Week 10
+# Risk Analysis Week 10
 1. Die Kombination der aktuellen UI für die Verwaltung der Geräte und der UI für das Konfigurieren der Inhalte klappt nicht. 
 * Eintrittswahrscheinlichkeit: klein
 * Gewichtung: Die Kombination dieser beiden UI's ist zentral, damit Geräte im UI verwaltet werden können (z.B. ein Gerät resetten oder löschen) und gleichzeitig im UI konfiguriert werden kann, welche Inhalte auf dem TRMNL Display angezeigt werden sollen. 

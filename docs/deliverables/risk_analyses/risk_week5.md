@@ -1,4 +1,4 @@
-# Risikoanalysis Week 5
+# Risk Analysis Week 5
 1. Verfeinerung der Darstellung des Kalenders aufwändiger als gedacht. 
 * Eintrittswahrscheinlichkeit: mittel
 * Gewichtung: Die vollständige Implementierung der Darstellung für den Kalender auf dem TRMNL Display ist das zentrale Ziel der nächsten Iteration. Sollte dies misslingen, wäre der Erfolg der nächsten Iteration gefährdet. 

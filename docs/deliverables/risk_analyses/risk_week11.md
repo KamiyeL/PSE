@@ -1,4 +1,4 @@
-# Risikoanalysis Week 11
+# Risk Analysis Week 11
 ## 1. Kompatibilitätsprobleme unter den einzelnen Teilsystemen
 Um parallel arbeiten zu können, haben wir Untergruppen gebildet, welche die nötigen Teilsysteme unabhängig voneinander entwickeln. Beim Zusammenführen könnten unvorhergesehene Probleme auftreten.  
 - **Eintrittswahrscheinlichkeit:** Mittel  

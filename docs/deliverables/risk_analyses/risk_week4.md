@@ -1,4 +1,4 @@
-# Risikoanalysis Week 4
+# Risk Analysis Week 4
 1. Erweiterung des bestehenden TRMNL-Moduls zur Darstellung von Kalenderdaten ist komplex.
 * Eintrittswahrscheinlichkeit: mittel
 * Gewichtung: Die Erweiterung unseres bestehnden TRMNL-Moduls um die Darstellung von Kalenderdaten ist ein zentrales Ziel der nächsten Iteration. Sollte die Implementierung scheitern, könnte dieses Ziel nicht erreicht werden.

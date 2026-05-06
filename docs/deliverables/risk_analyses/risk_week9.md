@@ -1,4 +1,4 @@
-# Risikoanalysis Week 9
+# Risk Analysis Week 9
 1. Die Implementation der Buttons im UI könnte nicht wie vorgesehen funktionieren, da sich die Logik dahinter nicht implementieren lässt. 
 * Eintrittswahrscheinlichkeit: gering
 * Gewichtung: Dem Kunden ist es wichtig, dass sich gängige Aktionen, wie das Löschen eine Gerätes oder ein Reset direkt im UI umgesetzt werden können, dafür sind diese Buttons zentral. 

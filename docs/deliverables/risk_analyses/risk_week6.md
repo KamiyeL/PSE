@@ -1,4 +1,4 @@
-# Risikoanalysis Week 6
+# Risk Analysis Week 6
 1. Verbindung in TRMNL mit eigenem Server ist nicht umsetzbar.
 * Eintrittswahrscheinlichkeit: klein
 * Gewichtung: Die Umsetzung über einen eignen Server hat für den Kunden hohe Priorität, da dies das Einrichten der Geräte für Unternehmen deutlich erleichtert. Denn das Einrichten über den TRMNL Server ist aufwändig und eventuell aus Datenschutzgründen problematisch.

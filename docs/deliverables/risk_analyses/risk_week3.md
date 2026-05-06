@@ -1,4 +1,4 @@
-# Risikoanalysis Week 3
+# Risk Analysis Week 3
 1. Komplexität von Aufsetzen von Odoo komplexer als gedacht.
 * Eintrittswahrscheinlichkeit: klein
 * Gewichtung: Kann Odoo nicht aufgesetzt werden, können wir kein Modul für die Verbindung zwischen Odoo und TRMNL implementieren. Dies würde das Darstellen eines Inhaltes aus Odoo auf dem Display des TRMNL verunmöglichen.
