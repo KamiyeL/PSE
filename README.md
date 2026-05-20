@@ -31,6 +31,11 @@ Für mehr Informationen zum Arbeitsplan siehe:
 └── README.md
 ``` 
 
+## Tutorial für Odoo und TRMNL
+<video autoplay loop muted playsinline controls style="width:100%; max-height:700px;">
+  <source src="./docs/odoo_setup.mp4" type="video/mp4">
+</video>
+
 ## Entwicklungsteam & Rollen
 
 - Timur Umut Turgul — Key Account Manager (Kundenkontakt)

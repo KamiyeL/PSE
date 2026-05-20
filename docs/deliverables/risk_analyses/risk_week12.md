@@ -1,4 +1,4 @@
-# Risk Analysis Week 11
+# Risk Analysis Week 12
 ## 1. Schwierigkeiten die Konfiguration über Models der Odoo Apps zu definieren.
 Der Kunde wünscht, dass man beim Konfigurieren der Profiles individuell die Models auswählen kann, da es für gewisse Apps mehrere Models gibt, welche eine individuelle Ansicht haben.
 * Eintrittswahrscheinlichkeit: mittel
