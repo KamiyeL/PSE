@@ -5,17 +5,18 @@
 1. [Overview](#overview)
 2. [Repository Structure](#repository-structure)
 3. [Architecture](#architecture)
-4. [Data Model](#data-model)
-5. [HTTP API](#http-api)
-6. [Device Lifecycle](#device-lifecycle)
-7. [Security Model](#security-model)
-8. [Display Policy System](#display-policy-system)
-9. [Refresh Rate System](#refresh-rate-system)
-10. [Telemetry and Log Ingestion](#telemetry-and-log-ingestion)
-11. [Backend UI](#backend-ui)
-12. [Test Strategy](#test-strategy)
-13. [Development Workflow](#development-workflow)
-14. [Known Constraints and Design Decisions](#known-constraints-and-design-decisions)
+4. [Design Patterns](#design-patterns)
+5. [Data Model](#data-model)
+6. [HTTP API](#http-api)
+7. [Device Lifecycle](#device-lifecycle)
+8. [Security Model](#security-model)
+9. [Display Policy System](#display-policy-system)
+10. [Refresh Rate System](#refresh-rate-system)
+11. [Telemetry and Log Ingestion](#telemetry-and-log-ingestion)
+12. [Backend UI](#backend-ui)
+13. [Test Strategy](#test-strategy)
+14. [Development Workflow](#development-workflow)
+15. [Known Constraints and Design Decisions](#known-constraints-and-design-decisions)
 
 ---
 
@@ -135,6 +136,42 @@ All three controllers inherit `TrmnlApiControllerMixin` for:
 - `_json_response()` — consistent JSON serialization with correct headers (`Content-Type`, `Cache-Control`, `Pragma`).
 
 Controllers are deliberately thin: they extract headers, delegate all business logic to model methods, and map the returned `record_status` string to an HTTP status code.
+
+---
+
+## Design Patterns
+
+The implementation uses several established design patterns and architectural principles.
+
+#### Model-View-Controller
+
+The module follows Odoo's standard Model-View-Controller structure. Controllers handle HTTP requests, models contain business logic and persistence, and XML views define the backend user interface.
+
+This separation keeps device communication, business logic, and user interface definitions clearly separated.
+
+#### Mixin Pattern
+
+The `trmnl.device` model is split into several focused mixins using Odoo's `_inherit` mechanism.
+
+Each mixin is responsible for one specific area, such as security, lifecycle handling, telemetry, display logic, or backend UI actions. This avoids one large monolithic model file and improves maintainability.
+
+#### Thin Controller Pattern
+
+The HTTP controllers are intentionally kept thin. They extract request data, call model methods, and transform the result into an HTTP response.
+
+The actual business logic remains in the model layer, where it can be reused and tested more easily.
+
+#### Strategy-like Policy System
+
+The display policy system follows a strategy-like approach. Depending on the configured policy, the system handles unknown devices and token mismatches differently.
+
+The supported policies are:
+
+- `error`
+- `auto_accept`
+- `factory_reset`
+
+Because the active policy is loaded from `ir.config_parameter`, the behavior can be changed without modifying the controller code or restarting the server.
 
 ---
 
@@ -555,6 +592,29 @@ make test
 ```
 
 This bootstraps the environment first (ensuring the module is installed), then runs the Odoo test runner scoped to the `trmnl` module tag.
+
+### Test Results
+
+The automated tests cover the main functional and security-relevant behavior of the module.
+
+The tested areas include:
+
+- device registration through `/api/setup`
+- display polling through `/api/display`
+- log ingestion through `/api/log`
+- handling of missing or invalid device identifiers
+- token validation and token mismatch handling
+- unknown device handling
+- display policy behavior for `error`, `auto_accept`, and `factory_reset`
+- refresh rate conversion and boundary validation
+- telemetry persistence
+- reset and re-registration behavior
+
+Golden image tests were initially considered but were ultimately not implemented because rendering behavior is already validated through automated rendering-related test cases.
+
+In addition to automated tests, manual testing was performed with real TRMNL devices. These tests verified that devices can connect to the Odoo server, poll the display endpoint, receive the configured refresh rate, and react to reset behavior. In addition manual testing was also used to identify usability issues in the UI.
+
+The test concept itself is maintained in a separate document. This design documentation therefore summarizes the test strategy and test results, while the detailed test cases are described in the dedicated test concept.
 
 ---
 
