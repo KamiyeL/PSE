@@ -592,8 +592,10 @@ This separation improves maintainability, readability, and scalability of the pr
 
 In the testing concept we planned to do manual testing, golden image tests and automated test in the form of unit tests.
 
-The manual testing included checking that the content of an Odoo module is displayed correctly.
+The manual testing included checking that the content of an Odoo module is displayed correctly. As part of this we made sure that all the test cases in the testing concept_V2 passed. 
+
+In addition we also used a Think-Aloud to identify useability issues in the Odoo UI. Thanks to the Think-Aloud we were able to identify missleading buttons and improve the instructions to that explain the setup process of the TRNMNL Display. 
 
 The golden image tests were not done, because the rendering is being tested in automated test cases. 
 
-The automated tests test the logic of the model as described above. They cover the test cases described in the testing concept V2. 
+The automated tests test the logic of the model as described above. They cover the test cases described in the testing concept V2 but also go beyond these test cases, because the approach on how to render the images for the TRMNL Display was changed in consultation with the customer.
