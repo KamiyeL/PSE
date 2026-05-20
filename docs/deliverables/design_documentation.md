@@ -21,9 +21,11 @@
 
 ## Overview
 
-This module integrates [TRMNL](https://usetrmnl.com) e-ink display devices with Odoo 19. It acts as a self-hosted server replacement for the TRMNL cloud, implementing the device-facing HTTP protocol (`/api/setup`, `/api/display`, `/api/log`) entirely within Odoo. Administrators manage devices, configure display content, and control access policy through the standard Odoo backend.
+This module integrates [TRMNL](https://trmnl.com) e-ink display devices with Odoo 19. It acts as a self-hosted replacement for the TRMNL cloud, implementing the device-facing HTTP protocol (`/api/setup`, `/api/display`, `/api/log`) entirely within Odoo. Administrators manage devices, configure display content, and control access policy through the standard Odoo backend.  
 
-The renderer (i.e. the system that generates image content to serve to devices) has not been implemented yet. Devices currently receive a placeholder image URL from the default `DEFAULT_IMAGE_URL` constant.
+This design documentation reflects the current stage of the main branch as of 20.05.2026 and is subject to change.
+
+The renderer subsystem — responsible for generating dynamic content per device — is actively being developed on the feature branch `feature/generic-trmnl-rendering-integration` and has not yet been merged into main. The `image_url` and `filename` fields currently serve static default values (`DEFAULT_IMAGE_URL`, `DEFAULT_FILENAME`). 
 
 **Technology stack:**
 - Odoo 19 (Python, XML views, ORM)
@@ -599,7 +601,3 @@ The policy is a global setting, not per-device, and is stored in `ir.config_para
 ### Identity Field Protection Context Key
 
 The `trmnl_allow_identity_update` context key is used internally to allow controlled mutation of `mac_address` and `friendly_id` during lifecycle transitions (e.g., clearing `reset_pending`, promoting a presented token). This pattern avoids duplicating the protection logic while keeping the guard visible at the call sites.
-
-### Renderer Not Yet Implemented
-
-The `image_url` and `filename` fields currently serve static default values (`DEFAULT_IMAGE_URL`, `DEFAULT_FILENAME`). The renderer subsystem — responsible for generating or selecting dynamic content per device — is planned but not yet implemented.
